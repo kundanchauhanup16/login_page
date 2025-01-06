@@ -109,6 +109,14 @@ fun Greeting2() {
                 .fillMaxWidth()
                 .padding(start = 20.dp)
         )
+
+        Text(
+            text = "Hello Again !", color = Color.Blue,
+            fontSize = 26.sp, fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 20.dp)
+        )
         Text(
             text = "Welcome", color = Color.Blue,
             fontSize = 26.sp, fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif,
