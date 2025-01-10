@@ -25,6 +25,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.UserHandle
 import android.view.Display
+import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -149,7 +150,8 @@ fun Greeting2() {
             placeholder = { Text("Enter your username") },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 20.dp).padding(end = 20.dp)
+                .padding(start = 20.dp)
+                .padding(end = 20.dp)
 
         )
 
@@ -162,22 +164,29 @@ fun Greeting2() {
                 password.add(it)
             },
             leadingIcon = {
-                          Icon(Icons.Default.Person, contentDescription = "person")
+                Icon(Icons.Default.Person, contentDescription = "person")
             },
             label = { Text("Password") },
             placeholder = { Text("Enter your password") },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 20.dp).padding(end = 20.dp)
+                .padding(start = 20.dp)
+                .padding(end = 20.dp)
 
         )
 
         Spacer(modifier = Modifier.height(26.dp))
-        OutlinedButton(onClick = { /*TODO*/ }) {
-            Text(text = "Registeration", fontWeight = FontWeight.Bold, fontSize = 25.sp)
-            validity(username.first(),password.first())
+        val contexth = LocalContext.current
 
+        val intent = Intent(contexth, SecondActivity::class.java)
+        OutlinedButton(onClick = {
+
+            contexth.startActivity(intent)
+        }) {
+            Text(text = "Registeration", fontWeight = FontWeight.Bold, fontSize = 25.sp)
+            validity(username.first(), password.first())
+            Toast.makeText(contexth, "Please enter something...", Toast.LENGTH_SHORT).show();
         }
     }
 

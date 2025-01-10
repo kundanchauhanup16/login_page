@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/compose_login_ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/login_page" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/new" vcs="Git" />
   </component>
 </project>
